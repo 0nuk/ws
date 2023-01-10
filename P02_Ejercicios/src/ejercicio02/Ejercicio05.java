@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ejercicio05 {
 	public static void main (String[] arg) {
-		
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		int cant, contpos = 0;
@@ -21,6 +21,5 @@ public class Ejercicio05 {
 			}
 		}
 		System.out.println(contpos + " números positivos");
-		scanner.close();
 	}
 }

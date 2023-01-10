@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Ejercicio07 {
 	public static void main (String[] arg) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int num, fact = 1;
 		System.out.println("Números factoriales");
@@ -14,6 +15,5 @@ public class Ejercicio07 {
 			fact = fact * i;
 		}
 		System.out.println(num + "! = " + fact);
-		scanner.close();
 	}
 }

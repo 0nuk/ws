@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Ejercicio08 {
 	public static void main (String[] arg) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int num1, num2;
 		System.out.println("Números pares");
@@ -21,6 +22,5 @@ public class Ejercicio08 {
 			System.out.print(num1 + ", ");
 			num1 = num1 + 2;
 		}
-		scanner.close();
 	}
 }

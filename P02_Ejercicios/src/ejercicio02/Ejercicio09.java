@@ -6,7 +6,7 @@ public class Ejercicio09 {
 	public static void main (String[] arg) {
 		int cont, i = 1, cantpos = 0, cantneg = 0, cantpar = 0, cantimpar = 0, contmayor, contmenor;
 		double num, sum, mayor, menor, media;
-		
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Introducir cantidad de números a procesar > ");
 		cont = scanner.nextInt();
@@ -53,6 +53,5 @@ public class Ejercicio09 {
 		System.out.println("Mayor valor: " + mayor + " ingresado en el lugar: " + contmayor);
 		System.out.println("Menor valor: " + menor + " ingresado en el lugar: " + contmenor);
 		System.out.println("Media: " + media);
-		scanner.close();
 	}
 }

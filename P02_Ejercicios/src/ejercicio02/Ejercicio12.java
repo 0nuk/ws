@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Ejercicio12 {
 	public static void main (String[] arg) {
 		
+		@SuppressWarnings("resource")
 		Scanner myscanner = new Scanner(System.in);	
 		int num, cont1 = 1, cont2 = 1, acum = 0;
 		
@@ -22,6 +23,5 @@ public class Ejercicio12 {
 			cont2 = 1;
 			acum = 0;
 		}
-		myscanner.close();
 	}
 }

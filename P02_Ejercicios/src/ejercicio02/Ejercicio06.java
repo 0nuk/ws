@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Ejercicio06 {
 	public static void main (String[] arg) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int cant, cantpos = 0, cantneg = 0;
 		double num;
@@ -21,6 +22,5 @@ public class Ejercicio06 {
 			}
 		}
 		System.out.println(cantpos + " números positivos y " + cantneg + " negativos");
-		scanner.close();
 	}
 }

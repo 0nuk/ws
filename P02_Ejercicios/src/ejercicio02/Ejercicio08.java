@@ -21,5 +21,6 @@ public class Ejercicio08 {
 			System.out.print(num1 + ", ");
 			num1 = num1 + 2;
 		}
+		scanner.close();
 	}
 }

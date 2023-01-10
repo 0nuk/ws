@@ -53,5 +53,6 @@ public class Ejercicio09 {
 		System.out.println("Mayor valor: " + mayor + " ingresado en el lugar: " + contmayor);
 		System.out.println("Menor valor: " + menor + " ingresado en el lugar: " + contmenor);
 		System.out.println("Media: " + media);
+		scanner.close();
 	}
 }

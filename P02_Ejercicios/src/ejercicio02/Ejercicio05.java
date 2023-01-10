@@ -21,5 +21,6 @@ public class Ejercicio05 {
 			}
 		}
 		System.out.println(contpos + " números positivos");
+		scanner.close();
 	}
 }

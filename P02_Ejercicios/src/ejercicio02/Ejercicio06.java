@@ -21,5 +21,6 @@ public class Ejercicio06 {
 			}
 		}
 		System.out.println(cantpos + " números positivos y " + cantneg + " negativos");
+		scanner.close();
 	}
 }

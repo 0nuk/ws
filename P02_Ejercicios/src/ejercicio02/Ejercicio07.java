@@ -14,5 +14,6 @@ public class Ejercicio07 {
 			fact = fact * i;
 		}
 		System.out.println(num + "! = " + fact);
+		scanner.close();
 	}
 }

@@ -12,6 +12,7 @@ public class Ejercicio11 {
 				 num2++;
 				 System.out.println();
 			 }
-		 }		 
-	 }
+		 }
+		scanner.close();
+	 	}
 }

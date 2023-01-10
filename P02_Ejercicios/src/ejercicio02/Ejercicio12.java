@@ -22,5 +22,6 @@ public class Ejercicio12 {
 			cont2 = 1;
 			acum = 0;
 		}
+		myscanner.close();
 	}
 }

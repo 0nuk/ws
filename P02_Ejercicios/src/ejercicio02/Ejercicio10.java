@@ -9,6 +9,7 @@ public class Ejercicio10 {
 		
 		for (int i = 1; i<=9; i++) {
 			System.out.println(i + " * " + num + " = " + i*num);
-		}		
+		}
+		scanner.close();
 	}
 }

@@ -2,6 +2,13 @@ package ejercicio01;
 
 import util.Util;
 
+//Suponiendo que el primer día del año fue lunes, escribir un programa que reciba
+//un número con el día del año (de 1 a 366) e imprima el día de la semana que 
+//le toca. 
+//Por ejemplo: 
+// si recibe 3 debe imprimir ’miércoles’, 
+// si recibe 9 debe imprimir ’martes’
+
 public class Ejercicio19B {
 	public static void main(String[] args) {
 		int diaDelAnyo, dia;

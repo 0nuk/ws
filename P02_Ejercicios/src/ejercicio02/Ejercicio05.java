@@ -1,5 +1,5 @@
+//Siguiendo la misma metodología de carga, calcular la cantidad de valores positivos
 package ejercicio02;
-
 import java.util.Scanner;
 
 public class Ejercicio05 {

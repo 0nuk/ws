@@ -1,16 +1,18 @@
+// Dado un número cualquier por teclado, mostrar su valor absoluto.
 package ejercicio01;
-import util.Util;
-// El nombre canónico es: ejercicios.Ejercicio01
+import java.util.Scanner;
 
 public class Ejercicio01 {
 	public static void main(String[] arg) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		double num, vAbs;
-		
-		num = Util.leerDouble("Ingrese valor numérico");
+		System.out.println("Ingrese valor numérico");
+		num = myscanner.nextDouble();
 		vAbs = num;
 		if(num < 0) {
 			vAbs = num * (-1);
 		}
-		Util.mostrar("|" + num + "| = " + vAbs);
+		System.out.println("|" + num + "| = " + vAbs);
 	}
 }

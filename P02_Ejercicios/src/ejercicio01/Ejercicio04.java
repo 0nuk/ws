@@ -1,14 +1,18 @@
+// Dados la base y altura de un triángulo, calcular su área.
 package ejercicio01;
-
-import util.Util;
+import java.util.Scanner;
 
 public class Ejercicio04 {
 	public static void main (String arg[]) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		double altura, base, area;
-		Util.mostrar("Área de un triángulo");
-		altura = Util.leerDouble("Ingrese altura del triángulo");
-		base = Util.leerDouble("Ingrese base del triángulo");
+		System.out.println("Área de un triángulo");
+		System.out.println("Ingrese altura del triángulo");
+		altura = myscanner.nextDouble();
+		System.out.println("Ingrese base del triángulo");
+		base = myscanner.nextDouble();
 		area = (altura * base)/2;
-		Util.mostrar("Área: " + area);
+		System.out.println("Área: " + area);
 	}
 }

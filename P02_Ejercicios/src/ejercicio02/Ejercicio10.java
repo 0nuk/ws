@@ -1,5 +1,7 @@
+// Dado un número entero n, imprimir su tabla de multiplicar del 1 al 9.
 package ejercicio02;
 import java.util.Scanner;
+
 public class Ejercicio10 {
 	public static void main (String[] arg) {
 		@SuppressWarnings("resource")

@@ -1,3 +1,4 @@
+// Escribir un programa que imprima las tablas del 1 al 9.
 package ejercicio02;
 public class Ejercicio11 {
 	 public static void main (String[] arg) {

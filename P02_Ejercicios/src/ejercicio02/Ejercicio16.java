@@ -1,3 +1,5 @@
+// Escribir un programa que pida al usuario un número entero positivo mayor que 2 y 
+// muestre por pantalla si es un número primo o no.
 package ejercicio02;
 
 import java.util.Scanner;

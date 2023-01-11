@@ -1,5 +1,7 @@
+// El programa generará un número aleatorio entre 0 y 100 y le pedirá al usuario que lo 
+// adivine. Cuando el usuario ingrese el número para ver si acertó, el programa le indicará si 
+// el número a adivinar es mayor, menor o bien si acertó. Cuando acierte, finaliza.
 package ejercicio03;
-
 import java.util.Scanner;
 
 public class Ejercicio03 {

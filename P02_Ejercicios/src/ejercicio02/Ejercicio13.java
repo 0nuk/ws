@@ -1,4 +1,7 @@
+// Escribir un programa que imprima por pantalla todas las fichas de dominó, de una por 
+// línea y sin repetir.
 package ejercicio02;
+
 public class Ejercicio13 {
 	public static void main (String[] arg) {
 		

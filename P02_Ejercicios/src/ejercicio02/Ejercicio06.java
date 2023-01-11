@@ -1,5 +1,6 @@
+// Siguiendo la misma metodología de carga, calcular la cantidad de valores >= 0 y la cantidad 
+// menores que 0.
 package ejercicio02;
-
 import java.util.Scanner;
 
 public class Ejercicio06 {

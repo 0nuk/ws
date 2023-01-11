@@ -1,18 +1,22 @@
+// Dados dos números, indicar el mayor y el menor valor de los tres.
 package ejercicio01;
-
-import util.Util;
+import java.util.Scanner;
 
 public class Ejercicio07 {
 	public static void main(String[] arg) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		double num1, num2, mayor;
-		num1 = Util.leerDouble("Introduce el primer número");
-		num2 = Util.leerDouble("Introduce el segundo número");
+		System.out.println("Introduce el primer número");
+		num1 = myscanner.nextDouble();
+		System.out.println("Introduce el segundo número");
+		num2 = myscanner.nextDouble();
 		
 		if (num1 >= num2) {
 			mayor = num1;
 		} else {
 			mayor = num2;
-			Util.mostrar("El mayor es: " + mayor);
+			System.out.println("El mayor es: " + mayor);
 		}
 	}
 }

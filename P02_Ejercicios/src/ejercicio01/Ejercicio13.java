@@ -1,16 +1,19 @@
+// Hacer un programa que dado un número entero n, indica si es o no par.
 package ejercicio01;
-
-import util.Util;
+import java.util.Scanner;
 
 public class Ejercicio13 {
 	public static void main(String[] arg) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		int num;
-		num = Util.leerInt("Ingrese un número");
+		System.out.println("Ingrese un número");
+		num = myscanner.nextInt();
 		
 		if (num%2 == 0) {
-			Util.mostrar("Es par");
+			System.out.println("Es par");
 		} else {
-			Util.mostrar("No es Par");
+			System.out.println("No es Par");
 		}
 	}
 

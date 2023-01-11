@@ -1,17 +1,23 @@
-package ejercicio02;
+// Imprimir la suma de n números ingresados por teclado. La cantidad de números 
+// (n) se solicita al usuario al principio y se ingresa por teclado.
 
-import util.Util;
+package ejercicio02;
+import java.util.Scanner;
 
 public class Ejercicio01A {
 	public static void main(String[] arg) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		int cant;
 		double num, sum;
 		sum = 0;
-		cant = Util.leerInt("Introduzca la cantidad de números a sumar");
+		System.out.print("Introduzca la cantidad de números a sumar > ");
+		cant = myscanner.nextInt();
 		for (int i = 1; i <= cant; i++) {
-			num = Util.leerDouble("Introduzca un número");
+			System.out.print("Introduzca un número > ");
+			num = myscanner.nextDouble();
 			sum += num;
 		}
-	Util.mostrar("La suma da: " + sum);
+		System.out.println("La suma da: " + sum);
 	}
 }

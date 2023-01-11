@@ -1,5 +1,5 @@
+// Dado un número entero n positivo, imprimir su factorial.
 package ejercicio02;
-
 import java.util.Scanner;
 
 public class Ejercicio07 {

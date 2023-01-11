@@ -1,5 +1,6 @@
+// Escriba un programa que pida un número entero mayor que cero y que escriba sus 
+// divisores.
 package ejercicio02;
-
 import java.util.Scanner;
 
 public class Ejercicio15 {

@@ -1,16 +1,20 @@
+// Hacer un programa que Dado un año indicar si es bisiesto. Un año es bisiesto si es un 
+// número divisible por 4, pero si es divisible por 100 debe ser es divisible por 400.
 package ejercicio01;
-
-import util.Util;
+import java.util.Scanner;
 
 public class Ejercicio14 {
 	public static void main(String[] arg) {
+		@SuppressWarnings("resource")
+		Scanner myscanner = new Scanner(System.in);
 		int anyo;
-		anyo = Util.leerInt("Introduce un año");
+		System.out.println("Introduce un año");
+		anyo = myscanner.nextInt();
 		
 		if (anyo%4 == 0 && anyo%100 != 0 || anyo%400 == 0) {
-			Util.mostrar("Es bisiesto");
+			System.out.println("Es bisiesto");
 		} else {
-			Util.mostrar("No es bisiesto");
+			System.out.println("No es bisiesto");
 		}
 	}
 }

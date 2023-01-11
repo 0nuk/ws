@@ -1,5 +1,8 @@
+// Se solicitará al usuario que ingrese números reales para procesar. Luego de ingresar cada
+// número, se le preguntará si quiere ingresar más o no, leyendo el carácter ‘s’ o ‘n’. Cuando 
+// indique que no ingresa más números, Mostrar la cantidad de valores ingresados, el primer 
+// valor, el último, el mayor y el menor.
 package ejercicio03;
-
 import java.util.Scanner;
 
 public class Ejercicio02 {

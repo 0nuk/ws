@@ -1,5 +1,14 @@
+// Solicitando al usuario la cantidad de números a procesar, emitir el siguiente informe: 
+// Cantidad de nos. Ingresados: xx
+// Sumatoria: xxx
+// Cantidad de nros positivos o 0: xx
+// Cantidad de nros negativos: xx
+// Cantidad de nros pares: xx
+// Cantidad de nros impares: xx
+// Mayor valor: xxx – ingresado en el lugar: xx
+// Menor valor: xxx – ingresado en el lugar: xx
+// Media: xx
 package ejercicio02;
-
 import java.util.Scanner;
 
 public class Ejercicio09 {

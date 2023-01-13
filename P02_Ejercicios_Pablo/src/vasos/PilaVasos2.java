@@ -13,7 +13,7 @@ public class PilaVasos2 {
 				Util.mostrarSinSalto(" ");
 			}
 			for (int j = 1; j <= i; j++) {
-				Util.mostrarSinSalto("* ");
+				Util.mostrarSinSalto("o ");
 			}
 			Util.mostrar("");
 		}

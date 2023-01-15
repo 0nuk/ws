@@ -97,7 +97,8 @@ public class Ejercicio15 {
 		diaMenorAcum = 365 - diaMenorAcum - diaMenor;
 		diaAcum = diaMenorAcum + diaMayorAcum + (((anyoMayor-anyoMenor)*365) - 365);
 		anyoResu = diaAcum / 365;
-		mesResu = (diaAcum%365) / 30;
-		diaResu = diaAcum%365%30;
+		mesResu = (int)((diaAcum%365) / 30.4166667);
+		diaResu = (int)(diaAcum%365%30.4166667);
+		System.out.print(diaResu + " día/s " + mesResu + " mes/es " + anyoResu + "año/s");
 	}
 }

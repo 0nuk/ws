@@ -38,23 +38,31 @@ public class Ejercicio17b {
 		int dig1 = num%10;
 		
 		while (dig1 != dig1Compu || dig2 != dig2Compu || dig3 != dig3Compu || dig4 != dig4Compu) {
-			if (dig1 == dig2Compu || dig1 == dig3Compu || dig1 == dig4Compu)
-				contRegular++;
-			if (dig2 == dig1Compu || dig2 == dig3Compu || dig2 == dig4Compu)
-				contRegular++;
-			if (dig3 == dig1Compu || dig3 == dig2Compu || dig3 == dig4Compu)
-				contRegular++;
-			if (dig4 == dig1Compu || dig4 == dig2Compu || dig4 == dig3Compu)
-				contRegular++;
 			
-			if (dig1 == dig1Compu)
+			if (dig1 == dig1Compu) {
 				contBueno++;
-			if (dig2 == dig2Compu)
+			} else if (dig1 == dig2Compu || dig1 == dig3Compu || dig1 == dig4Compu) {
+				contRegular++;
+			}
+			
+			if (dig2 == dig2Compu) {
 				contBueno++;
-			if (dig3 == dig3Compu)
+			} else if (dig2 == dig1Compu || dig2 == dig3Compu || dig2 == dig4Compu) {
+				contRegular++;
+			}
+			
+			if (dig3 == dig3Compu) {
 				contBueno++;
-			if (dig4 == dig4Compu)
-				contBueno++;
+			} else if (dig3 == dig1Compu || dig3 == dig2Compu || dig3 == dig4Compu) {
+				contRegular++;
+			}
+			
+			if (dig4 == dig4Compu) {
+				contBueno++;				
+			} else if (dig4 == dig1Compu || dig4 == dig2Compu || dig4 == dig3Compu) {
+				contRegular++;
+			}
+			
 			
 			System.out.println(contBueno + " bueno/s y " + contRegular + " regular/es");
 			

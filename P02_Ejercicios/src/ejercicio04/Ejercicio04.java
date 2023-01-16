@@ -12,14 +12,14 @@ public class Ejercicio04 {
 		num =  sc.nextInt();
 		print = num/1000;
 		System.out.println(print);
-		num = num-(print*1000);
+		num = num%1000;
 		print = num/100;
 		System.out.println(print);
-		num = num-(print*100);
+		num = num%100;
 		print = num/10;
 		System.out.println(print);
-		num = num-(print*10);
-		print = num/1;
+		num = num%10;
+		print = num;
 		System.out.println(print);
 	}
 }

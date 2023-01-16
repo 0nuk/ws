@@ -8,9 +8,9 @@ public class Ejercicio16 {
 	public static void main(String[] arg) {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		int cuenta, pago, moneda1 = 1, moneda2 = 2, moneda5 = 5, moneda10 = 10, moneda20 = 20, moneda50 = 50;
-		int moneda100 = 100, moneda200 = 200, billete5 = 500, billete10 = 1000, billete20 = 2000;
-		int billete50 = 5000, billete100 = 10000, billete200 = 20000, total;
+		int cuenta, pago, moneda1, moneda2, moneda5, moneda10, moneda20, moneda50;
+		int moneda100, moneda200, billete5, billete10, billete20;
+		int billete50, billete100, billete200, total;
 		
 		System.out.print("Ingrese el precio en € > ");
 		cuenta = (int)(sc.nextDouble()*100);
@@ -18,20 +18,33 @@ public class Ejercicio16 {
 		pago = (int)(sc.nextDouble()*100);
 		total = pago - cuenta;
 		
-		billete200 = 	total/billete200;
-		billete100 = 	(total-(billete200*20000))/billete100;
-		billete50 = 	(total-((billete200*20000)+(billete100*10000)))/billete50;
-		billete20 = 	(total-((billete200*20000)+(billete100*10000)+(billete50*5000)))/billete20;
-		billete10 = 	(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)))/billete10;
-		billete5 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)))/billete5;
-		moneda200 = 	(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)))/moneda200;
-		moneda100 = 	(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)))/moneda100;
-		moneda50 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)))/moneda50;
-		moneda20 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)+(moneda50*50)))/moneda20;
-		moneda10 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)+(moneda50*50)+(moneda20*20)))/moneda10;
-		moneda5 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)+(moneda50*50)+(moneda20*20)+(moneda10*10)))/moneda5;
-		moneda2 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)+(moneda50*50)+(moneda20*20)+(moneda10*10)+(moneda5*5)))/moneda2;
-		moneda1 = 		(total-((billete200*20000)+(billete100*10000)+(billete50*5000)+(billete20*2000)+(billete10*1000)+(billete5*500)+(moneda200*200)+(moneda100*100)+(moneda50*50)+(moneda20*20)+(moneda10*10)+(moneda5*5)+(moneda2*2)));
+		billete200 = total/20000;
+		total = total%20000;
+		billete100 = total/10000;
+		total = total%10000;
+		billete50 = total/5000;
+		total = total%5000;
+		billete20 = total/2000;
+		total = total%2000;
+		billete10 = total/1000;
+		total = total%1000;
+		billete5 = 	total/500;
+		total = total%500;
+		moneda200 = total/200;
+		total = total%200;
+		moneda100 = total/100;
+		total = total%100;
+		moneda50 = 	total/50;
+		total = total%50;
+		moneda20 = 	total/20;
+		total = total%20;
+		moneda10 = 	total/10;
+		total = total%10;
+		moneda5 = 	total/5;
+		total = total%5;
+		moneda2 = total/2;
+		total = total%2;
+		moneda1 = total;
 										
 		if (billete200!=0)
 			System.out.println("200€: " + billete200);

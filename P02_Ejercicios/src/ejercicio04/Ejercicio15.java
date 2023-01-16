@@ -40,65 +40,44 @@ public class Ejercicio15 {
 			anyoMenor = anyo1;
 		}
 		
-		switch(mesMayor) {
-			case 12:
-				diaMayorAcum += 30;
-			case 11:
-				diaMayorAcum += 31;
-			case 10:
-				diaMayorAcum += 30;
-			case 9:
-				diaMayorAcum += 31;
-			case 8:
-				diaMayorAcum += 31;
-			case 7:
-				diaMayorAcum += 30;
-			case 6:
-				diaMayorAcum += 31;
-			case 5:
-				diaMayorAcum += 30;
-			case 4:
-				diaMayorAcum += 31;
-			case 3:
-				diaMayorAcum += 28;
-			case 2:
-				diaMayorAcum += 31;
-			case 1:
-				diaMayorAcum += 0;					
-		}
-		diaMayorAcum += diaMayor;
+		diaMayorAcum = acumFecha(diaMayor, mesMayor);
+		diaMenorAcum = 365 - acumFecha(diaMenor, mesMenor);
 		
-		switch(mesMenor) {
-			case 12:
-				diaMenorAcum += 30;
-			case 11:
-				diaMenorAcum += 31;
-			case 10:
-				diaMenorAcum += 30;
-			case 9:
-				diaMenorAcum += 31;
-			case 8:
-				diaMenorAcum += 31;
-			case 7:
-				diaMenorAcum += 30;
-			case 6:
-				diaMenorAcum += 31;
-			case 5:
-				diaMenorAcum += 30;
-			case 4:
-				diaMenorAcum += 31;
-			case 3:
-				diaMenorAcum += 28;
-			case 2:
-				diaMenorAcum += 31;
-			case 1:
-				diaMenorAcum += 0;					
-		}
-		diaMenorAcum = 365 - diaMenorAcum - diaMenor;
-		diaAcum = diaMenorAcum + diaMayorAcum + (((anyoMayor-anyoMenor)*365) - 365);
+		diaAcum = diaMenorAcum + diaMayorAcum + ((anyoMayor-anyoMenor-1)*365);
 		anyoResu = diaAcum / 365;
-		mesResu = (int)((diaAcum%365) / 30.4166667);
+		mesResu = (int)((diaAcum%365)/30.4166667);
 		diaResu = (int)(diaAcum%365%30.4166667);
 		System.out.print(diaResu + " día/s " + mesResu + " mes/es " + anyoResu + "año/s");
+		
+	}
+	
+	public static int acumFecha(int dia, int mes) {
+		switch(mes) {
+		case 12:
+			dia += 30;
+		case 11:
+			dia += 31;
+		case 10:
+			dia += 30;
+		case 9:
+			dia += 31;
+		case 8:
+			dia += 31;
+		case 7:
+			dia += 30;
+		case 6:
+			dia += 31;
+		case 5:
+			dia += 30;
+		case 4:
+			dia += 31;
+		case 3:
+			dia += 28;
+		case 2:
+			dia += 31;
+		case 1:
+			dia += 0;					
+	}
+	return dia;
 	}
 }

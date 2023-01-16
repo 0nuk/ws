@@ -81,7 +81,7 @@ public class Ejercicio17 {
 				num = num/10;
 				dig1 = num%10;
 				if (revisar(dig1, dig2, dig3, dig4) == false)
-					System.out.println("No puede ingresar dígitos repetidos");
+					System.out.println("No puede ingresar dígitos repetidos ni empezar con 0.");
 			}	while (revisar(dig1, dig2, dig3, dig4) == false);
 			
 			
@@ -93,7 +93,7 @@ public class Ejercicio17 {
 	}
 	public static boolean revisar(int dig1, int dig2, int dig3, int dig4) {
 		boolean rev = false;
-		if (dig1!=dig2 && dig1!=dig3 && dig1!=dig4 && dig2!=dig3 && dig2!=dig4 && dig3!=dig4) {
+		if (dig1!=dig2 && dig1!=dig3 && dig1!=dig4 && dig2!=dig3 && dig2!=dig4 && dig3!=dig4 && dig1!=0) {
 			rev = true;
 		} else {
 			rev = false;

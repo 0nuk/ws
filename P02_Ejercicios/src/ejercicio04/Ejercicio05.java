@@ -8,14 +8,21 @@ public class Ejercicio05 {
 	public static void main(String[] arg) {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		int num, print;
+		int num, print, cont = 0, cant;
 		System.out.print("Ingrese un número entero: ");
 		num = sc.nextInt();
+		cant = num;
+		
+		while (cant != 0) {
+			 cant = cant/10;
+			 cont++;
+		}
 		
 		while (num != 0) {
-			print = num%10;
-			System.out.println(print);
-			num = num/10;
+			cont--;
+			print = num/(int)Math.pow(10, cont);
+			System.out.println(print); 
+			num = num%(int)Math.pow(10, cont);
 		}
 	}
 }

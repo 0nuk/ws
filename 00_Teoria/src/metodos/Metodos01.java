@@ -44,4 +44,11 @@ public class Metodos01 {
 			return fibonachi(n-1)+fibonachi(n-2);
 		}
 	}
+	
+//	public static int fibonachi2(int n) {
+//		int f = 1;
+//		for (int i = 1; i<= n; i++) {
+//			
+		}
+	}
 }

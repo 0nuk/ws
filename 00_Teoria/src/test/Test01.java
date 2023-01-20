@@ -1,11 +1,11 @@
-package ejercicio04;
+package test;
 
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Scanner;
 
 
-public class Test {
+public class Test01 {
 	public static void main(String[] arg) {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);

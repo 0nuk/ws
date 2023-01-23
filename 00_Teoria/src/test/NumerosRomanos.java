@@ -2,7 +2,7 @@ package test;
 
 public class NumerosRomanos {
 	public static void main(String[] args) {
-		System.out.println(romano("XCIV"));
+		System.out.println(romano("MMMCMXCIX"));
 	}
 	
 	public static int romano(String cadena) {

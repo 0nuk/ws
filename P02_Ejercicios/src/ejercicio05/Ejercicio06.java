@@ -6,10 +6,10 @@ package ejercicio05;
 
 public class Ejercicio06 {
 	public static void main(String[] args) {
-		System.out.println(mayuscula("hola como estas a e i o"));
+		System.out.println(mayuscula("hola cOmo estas a e i o "));
 	}
 	public static String mayuscula(String cadena) {
-		cadena =  " " + cadena;
+		cadena =  " " + cadena.trim();
 		String cadenaMayus = "";
 		for (int i = 0; i < cadena.length(); i++) {
 			cadenaMayus += cadena.charAt(i);

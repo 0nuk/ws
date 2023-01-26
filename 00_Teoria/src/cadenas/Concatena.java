@@ -2,6 +2,7 @@ package cadenas;
 
 public class Concatena {
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		String s = "";
 		StringBuilder sb = new StringBuilder("");
 		StringBuffer sbf = new StringBuffer("");
@@ -11,6 +12,7 @@ public class Concatena {
 		for (int i=1; i<= 250_000; i++) {
 			s += "a";
 		}
+		
 		tf = System.currentTimeMillis();
 		System.out.println("String: " + (tf-t0));
 		

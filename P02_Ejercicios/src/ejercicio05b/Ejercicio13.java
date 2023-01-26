@@ -4,7 +4,7 @@ package ejercicio05b;
 public class Ejercicio13 {
 	public static void main(String[] args) {
 		
-		System.out.println(parentesis("((Holacomo estas))"));
+		System.out.println(parentesis(")Holacomo estas("));
 	}
 	
 	public static boolean parentesis(String cadena) {

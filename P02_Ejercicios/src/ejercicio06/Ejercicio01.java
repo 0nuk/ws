@@ -15,8 +15,26 @@ public class Ejercicio01 {
 	}
 	
 	public static void print(double[] nums) {
+		System.out.print("{");	
 		for(int i = 0; i < nums.length; i++) {
-			System.out.println(nums[i]);
+			if(i<nums.length-1) {				
+				System.out.print(nums[i] + ", ");
+			} else {
+				System.out.print(nums[i]);			
+			}
 		}
+		System.out.println("}");	
+	}
+	
+	public static void print(int[] nums) {
+		System.out.print("{");	
+		for(int i = 0; i < nums.length; i++) {
+			if(i<nums.length-1) {				
+				System.out.print(nums[i] + ", ");
+			} else {
+				System.out.print(nums[i]);	
+			}
+		}
+		System.out.println("}");	
 	}
 }

@@ -12,6 +12,8 @@ public class Ejercicio02 {
 		nums[4] = 5;
 		
 		Ejercicio01.print(cuadrados(nums));
+		Ejercicio01.print(nums);
+
 		
 	}
 	public static double[] cuadrados(int[] nums) {

@@ -6,7 +6,8 @@ public class Ejercicio03 {
 		int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		Ejercicio01.print(nums);
 		Ejercicio01.print(reves(nums));
-	
+		revesNuevo(nums);
+		Ejercicio01.print(nums);
 	}
 	public static int[] reves(int[] nums) {
 		int[] valores = new int[nums.length];
@@ -14,5 +15,12 @@ public class Ejercicio03 {
 			valores[i] = nums[(nums.length-1)-i]; 
 		}
 		return valores;
+	}
+	public static void revesNuevo(int[] nums) {
+		for(int i=0; i<nums.length/2; i++) {
+			int aux = nums[i];
+			nums[i] = nums[(nums.length-1)-i];			
+			nums[(nums.length-1)-i] = aux;			
+		}
 	}
 }

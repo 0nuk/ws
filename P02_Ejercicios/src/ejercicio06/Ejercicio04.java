@@ -1,0 +1,18 @@
+// Desarrollar un método que reciba un array de enteros y retorne otro con el doble de 
+// tamaño y con los valores originales almacenados en las posiciones correspondientes.
+package ejercicio06;
+
+public class Ejercicio04 {
+	public static void main(String[] args) {
+		int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		Ejercicio01.print(nums);
+		Ejercicio01.print(doble(nums));	
+	}
+	public static int[] doble(int[] nums) {
+		int[] valores = new int[nums.length*2];
+		for(int i=0; i<nums.length; i++) {
+			valores[i]=nums[i];
+		}
+		return valores;
+	}
+}

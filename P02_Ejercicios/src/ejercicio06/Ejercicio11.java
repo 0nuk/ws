@@ -20,6 +20,7 @@ public class Ejercicio11 {
 		Scanner sc = new Scanner(System.in);
 		int id=-1;
 		char conti = 's';
+		String opcionString;
 		int opcion;
 		int cont = 0; 
 		String[] nombre = new String[2];
@@ -38,8 +39,8 @@ public class Ejercicio11 {
 			System.out.println("7 – Mostrar los alumnos con más de 3 inasistencias");
 			System.out.println("9 – Salir");
 			System.out.print("Opción > ");
-			opcion = sc.nextInt();
-			sc.nextLine();
+			opcionString = sc.nextLine();
+			opcion = Integer.parseInt(opcionString);
 			switch(opcion) {
 				case 1: 
 					for(int i=0; i <nombre.length && conti!='n'; i++) {

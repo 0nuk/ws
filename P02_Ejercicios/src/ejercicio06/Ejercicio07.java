@@ -11,7 +11,6 @@ public class Ejercicio07 {
 		Ejercicio01.print(nums2);
 		Ejercicio01.print(intercala(nums1, nums2));		
 	}
-
 	
 	public static int[] intercala(int[] nums1, int[] nums2) {
 		int[] valores = new int[nums1.length+nums2.length];

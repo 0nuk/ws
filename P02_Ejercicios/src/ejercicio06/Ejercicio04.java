@@ -15,4 +15,18 @@ public class Ejercicio04 {
 		}
 		return valores;
 	}
+	public static double[] doble(double[] nums) {
+		double[] valores = new double[nums.length*2];
+		for(int i=0; i<nums.length; i++) {
+			valores[i]=nums[i];
+		}
+		return valores;
+	}
+	public static String[] doble(String[] cadena) {
+		String[] cadenaDoble = new String[cadena.length*2];
+		for(int i=0; i<cadena.length; i++) {
+			cadenaDoble[i]=cadena[i];
+		}
+		return cadenaDoble;
+	}
 }

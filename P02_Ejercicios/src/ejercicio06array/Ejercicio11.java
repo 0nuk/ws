@@ -53,11 +53,11 @@ public class Ejercicio11 {
 				case 1: 
 					for(int i=0; i <nombre.length && conti!='n'; i++) {
 						if(cont+1 == nombre.length) {
-							nombre = Ejercicio04.doble(nombre);
-							modulo1 = Ejercicio04.doble(modulo1);
-							modulo2 = Ejercicio04.doble(modulo2);
-							notamedia = Ejercicio04.doble(notamedia);
-							inasistencia = Ejercicio04.doble(inasistencia);
+							nombre = Doble04.doble(nombre);
+							modulo1 = Doble04.doble(modulo1);
+							modulo2 = Doble04.doble(modulo2);
+							notamedia = Doble04.doble(notamedia);
+							inasistencia = Doble04.doble(inasistencia);
 						}
 						System.out.print("Ingrese el nombre del alumno ID Nr. " + (i+1) + " > ");
 						nombre[i] = sc.nextLine();

@@ -2,6 +2,7 @@ package cadenas;
 
 public class Concatena {
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		String s = "";
 		StringBuilder sb = new StringBuilder("");

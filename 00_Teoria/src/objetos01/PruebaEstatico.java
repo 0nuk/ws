@@ -5,6 +5,7 @@ import java.util.Scanner;
 import util.Util;
 
 public class PruebaEstatico {
+	@SuppressWarnings({ "unused", "resource" })
 	public static void main(String[] args) {
 		
 		Util.mostrar("hola que tal");

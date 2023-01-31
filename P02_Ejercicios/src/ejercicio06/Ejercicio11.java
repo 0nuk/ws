@@ -21,7 +21,7 @@ public class Ejercicio11 {
 		int id=-1;
 		char conti = 's';
 		String opcionString;
-		int opcion;
+		int opcion = 0;
 		int cont = 0; 
 		String[] nombre = new String[2];
 		double[] modulo1 = new double[2];
@@ -39,8 +39,16 @@ public class Ejercicio11 {
 			System.out.println("7 – Mostrar los alumnos con más de 3 inasistencias");
 			System.out.println("9 – Salir");
 			System.out.print("Opción > ");
+			do {
+				
 			opcionString = sc.nextLine();
-			opcion = Integer.parseInt(opcionString);
+			if(opcionString.charAt(0) >=48 && opcionString.charAt(0) <=57) {
+				opcion = Integer.parseInt(opcionString);
+			} else {
+				System.out.println("¡Ingrese un número entre el 1 y 8 o 9!");
+			}
+			} while(opcionString.charAt(0) <48 && opcionString.charAt(0) >57);
+			
 			switch(opcion) {
 				case 1: 
 					for(int i=0; i <nombre.length && conti!='n'; i++) {

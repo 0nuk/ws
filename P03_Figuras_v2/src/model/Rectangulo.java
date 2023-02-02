@@ -16,6 +16,10 @@ public class Rectangulo extends Figura{
 		return l1 * l2;
 	}
 	
+	public double perimetro() {
+		return (l1*2) + (l2*2);
+	}
+	
 	public String toString() {
 		return "Rect[" + x + ", " + y + "; " + l1 + ", " + l2 + "]";
 	}

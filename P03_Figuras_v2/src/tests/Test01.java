@@ -15,7 +15,7 @@ public class Test01 {
 	
 		Circulo c = new Circulo(1.5, -16.9, 8);
 		System.out.println(c.radio);
-		System.out.println(c.area());
+		System.out.println((double)Math.round(c.area()*100)/100);
 		System.out.println(c);
 	}
 }

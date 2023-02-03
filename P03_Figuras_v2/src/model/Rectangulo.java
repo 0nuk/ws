@@ -23,4 +23,10 @@ public class Rectangulo extends Figura{
 	public String toString() {
 		return "Rect[" + x + ", " + y + "; " + l1 + ", " + l2 + "]";
 	}
+	
+	public boolean equals(Object o) {
+		if(!super.equals(o)) return false;
+		Rectangulo otro = (Rectangulo)o;
+		return (this.l1 == otro.l1 && this.l2 == otro.l2) || (this.l1 == otro.l2 && this.l2 == otro.l1) ;
+	}
 }

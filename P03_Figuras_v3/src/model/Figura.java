@@ -1,6 +1,6 @@
 package model;
 
-public class Figura {
+public abstract class Figura {
 	private double x;
 	private double y;
 	

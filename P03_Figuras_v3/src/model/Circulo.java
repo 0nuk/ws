@@ -1,7 +1,7 @@
 package model;
 
 public class Circulo extends Figura{
-	public double radio;
+	private double radio;
 	
 	public Circulo() {}
 	
@@ -19,11 +19,17 @@ public class Circulo extends Figura{
 	}
 	
 	public String toString() {
-		return "Circ[" + x + ", " + y + "; " + radio + "]";
+		return "Circ[" + getX() + ", " + getY() + "; " + radio + "]";
 	}
 	public boolean equals(Object o) {
 		if(!super.equals(o)) return false;
 		Circulo otro = (Circulo)o;
 		return this.radio == otro.radio;
+	}
+	public double getRadio() {
+		return radio;
+	}
+	public void setRadio(double radio) {
+		this.radio = radio;
 	}
 }

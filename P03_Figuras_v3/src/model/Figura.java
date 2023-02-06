@@ -11,13 +11,9 @@ public abstract class Figura {
 		this.y = y;
 	}
 	
-	public double area() {
-		return 0;
-	}
+	public abstract double area(); 
 	
-	public double perimetro() {
-		return 0;
-	}
+	public abstract double perimetro();
 	
 	public boolean equals(Object o) {
 		if (o == null) return false;

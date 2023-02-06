@@ -2,7 +2,9 @@ package pruebas;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Cliente {
+import model.interfaces.Pintable;
+
+public class Cliente implements Pintable{
 	private int id;
 	private String nombre;
 	private String apellido1;
@@ -10,6 +12,8 @@ public class Cliente {
 	private String domicilio;
 	private double saldo;
 	private LocalDate fechaUltimCompra;
+	
+	public Cliente(){}
 	
 	public Cliente(int id, String nombre, String apellido1, String apellido2) {
 		this.id = id;
@@ -88,6 +92,7 @@ public class Cliente {
 		return id == other.id;
 	}
 	
-	
-	
+	public void pintar() {
+		System.out.println("pintando el cliente!!!");
+	}	
 }

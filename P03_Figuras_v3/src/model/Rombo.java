@@ -1,6 +1,8 @@
 package model;
 
-public class Rombo extends Figura {
+import model.interfaces.Pintable;
+
+public class Rombo extends Figura implements Pintable{
 	private double dmayor;
 	private double dmenor;
 	
@@ -37,5 +39,8 @@ public class Rombo extends Figura {
 	}
 	public void setDmenor(double dmenor) {
 		this.dmenor = dmenor;
+	}
+	public void pintar() {
+		System.out.println("pintando el rombo!!!");
 	}
 }

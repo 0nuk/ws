@@ -1,6 +1,8 @@
 package model;
 
-public class Cuadrado extends Rectangulo {
+import model.interfaces.Pintable;
+
+public class Cuadrado extends Rectangulo implements Pintable {
 	public Cuadrado(double x, double y, double lado) {
 		super(x, y, lado, lado);
 	}
@@ -21,4 +23,9 @@ public class Cuadrado extends Rectangulo {
 	public void setL2(double l2) {
 		setLado(l2);
 	}
+	
+	public void pintar() {
+		System.out.println("pintando el cuadradito!!!");	
+	}
+	
 }

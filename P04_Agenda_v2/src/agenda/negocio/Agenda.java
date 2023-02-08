@@ -1,17 +1,9 @@
 package agenda.negocio;
-import agenda.modelo.Contacto;
-import agenda.persistencia.ContactoDao;
-import agenda.persistencia.ContactoDaoSimulado;
 
-public class Agenda {
+import agenda.modelo.Contacto;
+
+public interface Agenda {
 	
-	private ContactoDao cDao =  new ContactoDaoSimulado();
-	
-	public void insetarContacto(Contacto c) {
-		cDao.insertar(c);
-	}
-	
-	public void borrar(int idContacto) {
-		cDao.eliminar(idContacto);
-	}
+	void insetarContacto(Contacto c); 
+	void borrar(int idContacto);
 }

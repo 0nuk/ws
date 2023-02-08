@@ -1,12 +1,12 @@
 package agenda.vista;
 
 import java.util.Scanner;
-
 import agenda.modelo.Contacto;
 import agenda.negocio.Agenda;
+import agenda.negocio.AgendaImpl;
 
 public class MenuPrincipal {
-	private Agenda neg = new Agenda();
+	private Agenda neg = new AgendaImpl();
 	Scanner tec = new Scanner(System.in);
 	
 	public MenuPrincipal() {

@@ -16,8 +16,10 @@ public class ListaArray implements Lista{
 	
 	@Override
 	public void agregar(String dato) {
-		// TODO Auto-generated method stub
-		
+		if(almacen.length == ultimo) {
+			redimensionar();
+		}
+		almacen[ultimo++] = dato;	
 	}
 
 	@Override
@@ -42,6 +44,10 @@ public class ListaArray implements Lista{
 	public int tamanyo() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	private void redimensionar() {
+		// TODO
 	}
 
 }

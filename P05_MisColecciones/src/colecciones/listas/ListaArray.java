@@ -3,23 +3,23 @@ package colecciones.listas;
 public class ListaArray implements Lista{
 
 	private String[] almacen;
-	private int ultimo;
+	private int cantidad;
 	
 	public ListaArray() {
 		almacen = new String[10];
-		ultimo = 0;
+		cantidad = 0;
 	}
 	public ListaArray(int tam) {
 		almacen = new String[tam];
-		ultimo = 0;
+		cantidad = 0;
 	}
 	
 	@Override
 	public void agregar(String dato) {
-		if(almacen.length == ultimo) {
+		if(almacen.length == cantidad) {
 			redimensionar();
 		}
-		almacen[ultimo++] = dato;	
+		almacen[cantidad++] = dato;	
 	}
 
 	@Override
@@ -30,24 +30,25 @@ public class ListaArray implements Lista{
 
 	@Override
 	public String buscar(int pos) {
-		// TODO Auto-generated method stub
-		return null;
+		return almacen[pos];
 	}
 
 	@Override
 	public boolean estaVacia() {
-		// TODO Auto-generated method stub
-		return false;
+		return cantidad == 0;
 	}
 
 	@Override
 	public int tamanyo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return cantidad;
 	}
 	
 	private void redimensionar() {
-		// TODO
+		String[] nuevo = new String[almacen.length * 2];
+		for (int i = 0; i < almacen.length; i++) {
+			nuevo[i] = almacen[i];
+		}
+		almacen = nuevo;
 	}
 
 }

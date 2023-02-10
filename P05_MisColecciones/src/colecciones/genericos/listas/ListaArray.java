@@ -1,5 +1,7 @@
 package colecciones.genericos.listas;
 
+import java.util.Iterator;
+
 public class ListaArray<E> implements Lista<E>{
 
 	private Object[] almacen;
@@ -51,5 +53,24 @@ public class ListaArray<E> implements Lista<E>{
 		}
 		almacen = nuevo;
 	}
+	@Override
+	public Iterator<E> iterator() {
+		return new IterArray();
+	}
+	
+	private class IterArray implements Iterator<E> {
+		
+		private int proximo = 0;
+		
+		@Override
+		public boolean hasNext() {
+			return proximo < cantidad;
+		}
 
+		@SuppressWarnings("unchecked")
+		@Override
+		public E next() {
+			return (E)almacen[proximo++];
+		}
+	}
 }

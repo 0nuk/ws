@@ -1,5 +1,7 @@
 package colecciones.genericos.listas;
 
+import java.util.Iterator;
+
 public class ListaEnlazada<E> implements Lista<E> {
 	
 	private Nodo primero;
@@ -11,7 +13,7 @@ public class ListaEnlazada<E> implements Lista<E> {
 	public void agregar(E dato) {
 		Nodo nuevo = new Nodo(dato);
 		if (ultimo!=null) {
-			ultimo.proximo = nuevo;
+			ultimo.siguiente = nuevo;
 			ultimo = nuevo;
 		} else {
 			primero = nuevo;
@@ -31,7 +33,7 @@ public class ListaEnlazada<E> implements Lista<E> {
 		if(pos < cantidad && pos >= 0) {
 			Nodo aux = primero;
 			for (int i = 0; i < pos; i++) {
-				aux = aux.proximo;
+				aux = aux.siguiente;
 			}
 			return aux.dato;
 		} else {
@@ -49,18 +51,41 @@ public class ListaEnlazada<E> implements Lista<E> {
 		return cantidad;
 	}
 	
+	@Override
+	public Iterator<E> iterator() {
+		return new IterEnlazada();
+	}
+	
 	private class Nodo{
 		E dato;
-		Nodo proximo;
+		Nodo siguiente;
 		
 		public Nodo(E dato) {
 			this.dato = dato;
 		}
 		@SuppressWarnings("unused")
-		public Nodo(E dato, Nodo proximo) {
+		public Nodo(E dato, Nodo siguiente) {
 			this(dato);
-			this.proximo = proximo;
+			this.siguiente = siguiente;
 		}
+	}
+
+	private class IterEnlazada implements Iterator<E>{
+		
+		private Nodo proximo = primero;
+		
+		@Override
+		public boolean hasNext() {
+			return proximo != null;
+		}
+
+		@Override
+		public E next() {
+			E dato = proximo.dato;
+			proximo = proximo.siguiente;
+			return dato;
+		}
+		
 	}
 
 }

@@ -1,6 +1,6 @@
 package colecciones.genericos.listas;
 
-public interface Lista <E> {
+public interface Lista <E> extends Iterable<E>{
 
 	void agregar(E dato);
 	

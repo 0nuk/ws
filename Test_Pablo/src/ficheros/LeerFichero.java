@@ -4,20 +4,24 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class LeerFichero {
 	
 	public static void main(String[] args) {
-		String fich = "/datos/productos.xml";
-//		procesaPorLinea(fich);
-		procesaPorLinea("/datos/datos.csv");
+		String fich = "C:\\Users\\Tardes\\Downloads\\Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv\\";
+		procesaPorLinea(fich);
 		
-		List<String[]> original = procesaCSV("/datos/datos.csv");
-		muestraProcesado(original);
+		List<String[]> original = procesaCSV("C:\\Users\\Tardes\\Downloads\\Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv\\");
+//		muestraProcesado(original);
 		
-		List<String[]> nuevo = eliminaColumnas(original, 1,2,4);
+		List<String[]> nuevo = eliminaColumnas(original,3,4);
+//		muestraProcesado(nuevo);
+		
+		eliminaFilas(nuevo, 0);
+		modificarNombre(nuevo);
 		muestraProcesado(nuevo);
 	}
 
@@ -54,12 +58,26 @@ public class LeerFichero {
 		}
 	}
 	
+	public static void modificarNombre(List<String[]> datos){
+		for(String[] linea : datos) {
+			linea[0]=linea[0].substring(36);
+		}
+	}
+	
+	public static void eliminaFilas(List<String[]> datos, int... filas) {
+		Arrays.sort(filas);
+		for(int i = filas.length-1; i >= 0; i--) {			
+			datos.remove(filas[i]);
+		}
+	}
+	
 	public static List<String[]> eliminaColumnas(List<String[]> datos, int... cols) {
 		List<String[]> resu = new LinkedList<>();
 		String[] nuevo;
 		for (String[] linea : datos) {
 			nuevo = new String[linea.length - cols.length];
 			int j = 0, k = 0; // j para nuevo... k para cols
+			
 			for (int i = 0; i < linea.length; i++) {
 				if (k < cols.length && cols[k] == i)
 					k++;

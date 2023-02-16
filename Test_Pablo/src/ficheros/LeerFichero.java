@@ -14,22 +14,26 @@ public class LeerFichero {
 	public static void main(String[] args) {
 		String fichConvertia = "C:\\Users\\Tardes\\Downloads\\Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv\\";
 		String fichAds = "C:\\Users\\Tardes\\Downloads\\convertia_report.csv\\";
+		procesaPorLinea(fichAds);
+		System.out.println("---------------------------------------");
 		muestraProcesado(convierteConvertia(fichConvertia));
-		System.out.println("************************************");
-//		muestraProcesado(procesaCSV(fichAds));
+		System.out.println("---------------------------------------");
 		muestraProcesado(convierteAds(fichAds));
+		System.out.println("---------------------------------------");		
+		muestraProcesado(unirCSV(convierteConvertia(fichConvertia),convierteAds(fichAds)));
+
 	}
 
-//	public static void procesaPorLinea(String nomFichero) {
-//		Path fichero = Paths.get(nomFichero);
-//		try {
-//			for (String linea : Files.readAllLines(fichero)) {
-//				System.out.println(linea);
-//			}
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public static void procesaPorLinea(String nomFichero) {
+		Path fichero = Paths.get(nomFichero);
+		try {
+			for (String linea : Files.readAllLines(fichero)) {
+				System.out.println(linea);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static List<String[]> procesaCSV(String nomFichero) {
 		List<String[]> resu = new LinkedList<>();
@@ -120,30 +124,66 @@ public class LeerFichero {
 		
 		return nuevoAds;
 	}
+//	public static List<String[]> unirCSV(List<String[]> nuevoConvertia, List<String[]> nuevoAds){
+//		List<String[]> unido = new LinkedList<>();
+//		Iterator<String[]> ads = nuevoAds.iterator();
+//		Iterator<String[]> con = nuevoConvertia.iterator();
+//		String[] nuevo;
+//		nuevo = new String[nuevoConvertia.get(0)[0].length()+nuevoAds.get(0)[0].length()];
+//		while(ads.hasNext()) {
+//			int k = 0;
+//			for(int i = 0; i < nuevoConvertia.size(); i++) {
+//				if(nuevoConvertia.get(i)[0].equals(nuevoAds.get(k)[0])) {
+//					nuevo = new String[nuevoConvertia.get(0)[0].length()+nuevoAds.get(0)[0].length()];
+//					int cont = 0;
+//					for(int j = 0; cont < nuevo.length; j++) {
+//						if(cont<nuevoConvertia.get(i)[j].length())
+//							nuevo[cont++] = nuevoConvertia.get(i)[j];
+//						if(cont<nuevoAds.get(k)[j].length())
+//							nuevo[cont++] = nuevoAds.get(k)[0];
+//					}
+//				}
+//				unido.add(nuevo);
+//			}
+//			ads.next();
+//			k++;
+//		}
+//		return unido;
+//	}
 	public static List<String[]> unirCSV(List<String[]> nuevoConvertia, List<String[]> nuevoAds){
 		List<String[]> unido = new LinkedList<>();
 		Iterator<String[]> ads = nuevoAds.iterator();
-		Iterator<String[]> con = nuevoConvertia.iterator();
 		String[] nuevo;
-		nuevo = new String[nuevoConvertia.get(0)[0].length()+nuevoAds.get(0)[0].length()];
+		String[] comodin;
+		int i = 0;
 		while(ads.hasNext()) {
-			int k = 0;
-			for(int i = 0; i < nuevoConvertia.size(); i++) {
-				if(nuevoConvertia.get(i)[0].equals(nuevoAds.get(k)[0])) {
-					nuevo = new String[nuevoConvertia.get(0)[0].length()+nuevoAds.get(0)[0].length()];
-					int cont = 0;
-					for(int j = 0; cont < nuevo.length; j++) {
-						if(cont<nuevoConvertia.get(i)[j].length())
-							nuevo[cont++] = nuevoConvertia.get(i)[j];
-						if(cont<nuevoAds.get(k)[j].length())
-							nuevo[cont++] = nuevoAds.get(k)[0];
+			nuevo = new String[11];
+			comodin = ads.next();
+			i = 0;
+			for(String[] linea : nuevoConvertia) {
+				if(linea[0].equals(comodin[0])) {
+					for(; i<linea.length; i++) {
+						nuevo[i] = linea[i];
 					}
 				}
-				unido.add(nuevo);
 			}
-			ads.next();
-			k++;
+			for(int j = 0; j < comodin.length; j++) {
+				
+				nuevo[i] = comodin[j];
+				i++;
+			}
+			unido.add(nuevo);
 		}
 		return unido;
 	}
+	
+//	public static String quitaComas(String linea) {
+//		while(linea.indexOf("\"")!=-1) {
+//			int posComilla;
+//			int posComa;
+//			posComilla = linea.indexOf("\"");
+//			posComa = linea.indexOf(linea, posComilla);
+//			return linea;
+//		}
+//	}
 }

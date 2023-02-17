@@ -12,8 +12,10 @@ import java.util.List;
 public class LeerFichero {
 	
 	public static void main(String[] args) {
-		String fichConvertia = "C:\\Users\\Tardes\\Downloads\\Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv\\";
-		String fichAds = "C:\\Users\\Tardes\\Downloads\\convertia_report.csv\\";
+//		String fichConvertia = "C:\\Users\\Tardes\\Downloads\\Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv\\";
+//		String fichAds = "C:\\Users\\Tardes\\Downloads\\convertia_report.csv\\";
+		String fichConvertia = "/home/conde/Downloads/Convertia__Reporte Afiliados_Data analytics-Campañas_Tabla.csv/";
+		String fichAds = "/home/conde/Downloads/Campaign_report.csv/";
 		procesaPorLinea(fichAds);
 		System.out.println("---------------------------------------");
 		muestraProcesado(convierteConvertia(fichConvertia));
@@ -21,9 +23,12 @@ public class LeerFichero {
 		muestraProcesado(convierteAds(fichAds));
 		System.out.println("---------------------------------------");		
 		muestraProcesado(unirCSV(convierteConvertia(fichConvertia),convierteAds(fichAds)));
-
+		
 	}
 
+	
+	
+	
 	public static void procesaPorLinea(String nomFichero) {
 		Path fichero = Paths.get(nomFichero);
 		try {
@@ -40,6 +45,7 @@ public class LeerFichero {
 		Path fichero = Paths.get(nomFichero);
 		try {
 			for (String linea : Files.readAllLines(fichero)) {
+				linea = quitaComas(linea);
 				resu.add(linea.split(","));
 			}
 		} catch (IOException e) {
@@ -59,7 +65,8 @@ public class LeerFichero {
 	
 	public static void modificarNombre(List<String[]> datos){
 		for(String[] linea : datos) {
-			linea[0]=linea[0].substring(36);
+			if(linea[0].indexOf("Campa")==-1)
+				linea[0]=linea[0].substring(36);
 		}
 	}
 	
@@ -75,7 +82,7 @@ public class LeerFichero {
 		datos.remove(1);
 		for(Iterator<String[]> it = datos.iterator(); it.hasNext();) {
 			String[] linea = it.next();
-			if (linea[0].indexOf("Campaign") != -1 || linea[0].indexOf("Total") != -1 || linea[0].indexOf("2023") != -1) {
+			if (linea[0].indexOf("Campaign report") != -1 || linea[0].indexOf("Total") != -1 || linea[0].indexOf("2023") != -1) {
 				it.remove();
 			}
 		}
@@ -112,7 +119,7 @@ public class LeerFichero {
 	
 	public static List<String[]> convierteConvertia(String nomFichero){
 		List<String[]> nuevoConvertia = procesaCSV(nomFichero);
-		eliminaFilas(nuevoConvertia, 0);
+//		eliminaFilas(nuevoConvertia);
 		nuevoConvertia = eliminaColumnas(nuevoConvertia, 3, 4);
 		modificarNombre(nuevoConvertia);
 		return nuevoConvertia;
@@ -157,18 +164,23 @@ public class LeerFichero {
 		String[] comodin;
 		int i = 0;
 		while(ads.hasNext()) {
-			nuevo = new String[11];
+			nuevo = new String[9];
 			comodin = ads.next();
 			i = 0;
 			for(String[] linea : nuevoConvertia) {
-				if(linea[0].equals(comodin[0])) {
+				
+				if(linea[0].equals(comodin[0])||comodin[0].equals("Campaign")) {
 					for(; i<linea.length; i++) {
 						nuevo[i] = linea[i];
 					}
+				} else {
+					nuevo[0] = comodin[0];
+					nuevo[1] = "0";
+					nuevo[2] = "0";
+					i = 3;
 				}
 			}
-			for(int j = 0; j < comodin.length; j++) {
-				
+			for(int j = 1; j < comodin.length; j++) {
 				nuevo[i] = comodin[j];
 				i++;
 			}
@@ -177,13 +189,14 @@ public class LeerFichero {
 		return unido;
 	}
 	
-//	public static String quitaComas(String linea) {
-//		while(linea.indexOf("\"")!=-1) {
-//			int posComilla;
-//			int posComa;
-//			posComilla = linea.indexOf("\"");
-//			posComa = linea.indexOf(linea, posComilla);
-//			return linea;
-//		}
-//	}
+	public static String quitaComas(String linea) {
+		while(linea.indexOf("\"")!=-1) {
+			int posComilla;
+			int posComa;
+			posComilla = linea.indexOf("\"");
+			posComa = linea.indexOf(",", posComilla);
+			linea = linea.substring(0, posComilla) + linea.substring(posComilla+1, posComa) + linea.substring(posComa+1, linea.indexOf("\"", posComa)) + linea.substring(linea.indexOf("\"", posComa)+1, linea.length());
+		}
+		return linea;
+	}
 }

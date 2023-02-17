@@ -1,4 +1,4 @@
-package ficheros;
+package juntar;
 
 import java.io.IOException;
 import java.nio.file.Files;

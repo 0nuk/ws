@@ -1,6 +1,7 @@
 package agenda.modelo;
 
 import java.text.Collator;
+import java.util.Comparator;
 import java.util.Locale;
 
 public class Contacto implements Comparable<Contacto> {
@@ -21,7 +22,14 @@ public class Contacto implements Comparable<Contacto> {
 		telefonos =  new String[10];
 		correos =  new String[10];
 	}
-
+	
+	public Contacto(int idContacto, String nombre, String apodo) {
+		this();
+		this.idContacto = idContacto;
+		this.nombre = nombre;
+		this.apodo = apodo;
+	}
+	
 	public int getIdContacto() {
 		return idContacto;
 	}
@@ -135,4 +143,15 @@ public class Contacto implements Comparable<Contacto> {
 		
 		return col.compare(this.nombre + this.idContacto, o.nombre + o.idContacto);
 	}
+	
+	public static Comparator<Contacto> getComparatorId(){
+		return new IdComparator();
+	}
+	
+	private static class IdComparator implements Comparator<Contacto>{
+		@Override
+		public int compare(Contacto o1, Contacto o2) {
+			return o1.getIdContacto()-o2.getIdContacto();
+		}
+	}	
 }

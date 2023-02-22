@@ -2,7 +2,6 @@ package sets;
 
 import java.util.Set;
 import java.util.TreeSet;
-
 import agenda.modelo.Contacto;
 
 public class Test06 {
@@ -15,5 +14,11 @@ public class Test06 {
 		ss.add(c1);
 		ss.add(c2);
 		ss.add(c3);
+		
+		System.out.println("---------------------------------");
+		ss.forEach(System.out::println);
+		System.out.println("---------------------------------");
+		ss.forEach(o->System.out.println(o));
+		System.out.println("---------------------------------");
 	}
 }

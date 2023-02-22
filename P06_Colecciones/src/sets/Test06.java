@@ -12,5 +12,8 @@ public class Test06 {
 		Contacto c3 = new Contacto(75, "Mario", "Alfa");
 		
 		Set<Contacto> ss = new TreeSet<>(Contacto.getComparatorId());
+		ss.add(c1);
+		ss.add(c2);
+		ss.add(c3);
 	}
 }

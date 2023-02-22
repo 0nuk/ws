@@ -1,19 +1,41 @@
 package agenda.negocio;
 
-import agenda.modelo.Contacto;
-import agenda.persistencia.ContactoDao;
-import agenda.persistencia.ContactoDaoSQL;
+import java.util.Set;
 
-public class AgendaImpl implements Agenda{
-	
-//	private ContactoDao cDao =  new ContactoDaoSimulado();
-	private ContactoDao cDao =  new ContactoDaoSQL();
-	
+import agenda.modelo.Contacto;
+import agenda.persistencia.ContactoMapDao;
+
+public class AgendaImpl implements Agenda {
+	ContactoMapDao dao = new ContactoMapDao();
+	@Override
 	public void insetarContacto(Contacto c) {
-		cDao.insertar(c);
+		dao.insertar(c);
+		
 	}
-	
-	public void borrar(int idContacto) {
-		cDao.eliminar(idContacto);
+
+	@Override
+	public Contacto eliminar(int idContacto) {
+		Contacto c = new Contacto();
+		c = dao.buscar(idContacto);
+		dao.eliminar(idContacto);
+		return c;
 	}
+
+	@Override
+	public boolean eliminar(Contacto c) {
+		
+	}
+
+	@Override
+	public void modificar(Contacto c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Set<Contacto> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

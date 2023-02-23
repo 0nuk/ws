@@ -54,12 +54,11 @@ public class MenuPrincipal {
 		nuevo.setNombre(nom);
 		nuevo.setApodo(apodo);
 		neg.insetarContacto(nuevo);
-		
-		
-		
+				
 	}
 	private void buscar() {
-		System.out.println("buscar");
-		
+		for (Contacto c : neg.buscarTodos()) {
+			System.out.println(c);
+		}
 	}
 }

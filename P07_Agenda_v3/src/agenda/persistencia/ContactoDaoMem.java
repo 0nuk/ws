@@ -1,6 +1,5 @@
 package agenda.persistencia;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -9,11 +8,10 @@ import java.util.TreeSet;
 
 import agenda.modelo.Contacto;
 
-public class ContactoMapDao implements ContactoDao {
-
+public class ContactoDaoMem implements ContactoDao {
+	
 	private Map<Integer, Contacto> almacen = new HashMap<>();
 	private int id = 1;
-	
 	@Override
 	public void insertar(Contacto c) {
 		c.setIdContacto(id);
@@ -47,7 +45,7 @@ public class ContactoMapDao implements ContactoDao {
 	public Set<Contacto> buscar(String nom) {
 		Set<Contacto> c = new HashSet<>();
 		for(Contacto contacto : almacen.values()) {
-			if(contacto.getApellidos().indexOf(nom)!=-1||contacto.getNombre().indexOf(nom)!=-1||contacto.getApodo().indexOf(nom)!=-1) {
+			if(contacto.getApellidos().toLowerCase().indexOf(nom.toLowerCase())!=-1||contacto.getNombre().toLowerCase().indexOf(nom.toLowerCase())!=-1||contacto.getApodo().toLowerCase().indexOf(nom.toLowerCase())!=-1) {
 				c.add(contacto);
 			}
 		}

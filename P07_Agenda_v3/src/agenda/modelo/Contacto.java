@@ -23,9 +23,8 @@ public class Contacto implements Comparable<Contacto> {
 		correos =  new String[10];
 	}
 	
-	public Contacto(int idContacto, String nombre, String apodo) {
+	public Contacto(String nombre, String apodo) {
 		this();
-		this.idContacto = idContacto;
 		this.nombre = nombre;
 		this.apodo = apodo;
 	}

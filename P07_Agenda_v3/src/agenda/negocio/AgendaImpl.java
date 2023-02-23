@@ -1,12 +1,14 @@
 package agenda.negocio;
 
 import java.util.Set;
+import java.util.TreeSet;
 
 import agenda.modelo.Contacto;
-import agenda.persistencia.ContactoMapDao;
+import agenda.persistencia.ContactoDaoMem;
 
 public class AgendaImpl implements Agenda {
-	ContactoMapDao dao = new ContactoMapDao();
+	ContactoDaoMem dao = new ContactoDaoMem();
+	
 	@Override
 	public void insetarContacto(Contacto c) {
 		dao.insertar(c);
@@ -23,19 +25,20 @@ public class AgendaImpl implements Agenda {
 
 	@Override
 	public boolean eliminar(Contacto c) {
-		
+		return dao.eliminar(c.getIdContacto());
 	}
 
 	@Override
 	public void modificar(Contacto c) {
-		// TODO Auto-generated method stub
+		dao.actualizar(c);
 		
 	}
 
 	@Override
 	public Set<Contacto> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		Set<Contacto> todos = new TreeSet<>((o1, o2)-> (o1.getApodo()+o1.getIdContacto()).compareToIgnoreCase(o2.getApodo()+o2.getIdContacto()));
+		todos.addAll(dao.buscarTodos());
+		return todos;	
 	}
 
 }

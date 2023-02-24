@@ -6,7 +6,7 @@ import agenda.modelo.Contacto;
 
 public interface Agenda {
 	
-	void insetarContacto(Contacto c); 
+	void insertarContacto(Contacto c); 
 	
 	Contacto eliminar(int idContacto);
 	

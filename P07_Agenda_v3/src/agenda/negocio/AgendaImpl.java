@@ -10,7 +10,7 @@ public class AgendaImpl implements Agenda {
 	ContactoDaoMem dao = new ContactoDaoMem();
 	
 	@Override
-	public void insetarContacto(Contacto c) {
+	public void insertarContacto(Contacto c) {
 		dao.insertar(c);
 		
 	}

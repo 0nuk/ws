@@ -32,8 +32,7 @@ public class ContactoDaoMem implements ContactoDao {
 
 	@Override
 	public void actualizar(Contacto contacto) {
-		almacen.replace(contacto.getIdContacto(), contacto);
-		
+		almacen.replace(contacto.getIdContacto(), contacto);		
 	}
 
 	@Override
@@ -51,10 +50,9 @@ public class ContactoDaoMem implements ContactoDao {
 		}
 		return c;
 	}
-
+	
 	@Override
 	public Set<Contacto> buscarTodos() {
 		return new TreeSet<>(almacen.values());
 	}
-
 }

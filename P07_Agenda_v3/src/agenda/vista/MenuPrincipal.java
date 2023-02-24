@@ -1,64 +1,44 @@
 package agenda.vista;
 
-import java.util.Scanner;
-import agenda.modelo.Contacto;
 import agenda.negocio.Agenda;
 import agenda.negocio.AgendaImpl;
+import util.Util;
 
 public class MenuPrincipal {
-	private Agenda neg = new AgendaImpl();
-	Scanner tec = new Scanner(System.in);
+	
+	private Agenda agenda;
 	
 	public MenuPrincipal() {
-		menu();
+		agenda = new AgendaImpl();
 	}
 	
-	private void menu() {
-		System.out.println("¡Super Agenda 86!");
-		System.out.println("-----------------");
+	public void menu() {
+		System.out.println("SUPER AGENDA XX 7 PLUS");
+		System.out.println("----------------------");
 		boolean salir = false;
 		int opcion;
+		
 		do {
-			System.out.println("Menú Principal");
+			System.out.println("\nMenu Principal");
 			System.out.println("1 - Nuevo Contacto");
-			System.out.println("2 - Buscar Contacto");
+			System.out.println("2 - Buscar contactos");
+			System.out.println("3 - Listar todos");
+			System.out.println("4 - Eliminar Contacto");
+			System.out.println("5 - Importar contactos");
 			System.out.println("9 - Salir");
-			System.out.print(">");
+			System.out.println("Opci�n: ");
+			opcion = Util.leerInt();
 			
-			opcion = tec.nextInt();
-			tec.nextLine();
 			switch (opcion) {
 			case 1:
-				nuevo();
+				new NuevoContacto(agenda);
 				break;
-			case 2:
-				buscar();
+			case 3:
+				new ConsultarTodos(agenda);
 				break;
 			case 9:
 				salir = true;
-				break;
 			}
-		
 		} while(!salir);
-	}
-	
-	private void nuevo() {
-		System.out.println("\n\nNuevo Contacto");
-		System.out.println("Ingresa los datos del nuevo Contacto");
-		System.out.println("Nombre: ");
-		String nom = tec.nextLine();
-		System.out.println("Apodo: ");
-		String apodo = tec.nextLine();
-		
-		Contacto nuevo = new Contacto();
-		nuevo.setNombre(nom);
-		nuevo.setApodo(apodo);
-		neg.insetarContacto(nuevo);
-				
-	}
-	private void buscar() {
-		for (Contacto c : neg.buscarTodos()) {
-			System.out.println(c);
-		}
 	}
 }

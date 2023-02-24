@@ -7,6 +7,13 @@ public class Domicilio {
 	private String via;
 	private int numero;
 	private int piso;
+	private String puerta;
+	public String getPuerta() {
+		return puerta;
+	}
+	public void setPuerta(String puerta) {
+		this.puerta = puerta;
+	}
 	private String codigoPostal;
 	private String ciudad;
 	private String provincia;

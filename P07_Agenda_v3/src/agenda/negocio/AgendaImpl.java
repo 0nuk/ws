@@ -1,5 +1,6 @@
 package agenda.negocio;
 
+import java.io.FileNotFoundException;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -39,6 +40,17 @@ public class AgendaImpl implements Agenda {
 		Set<Contacto> todos = new TreeSet<>((o1, o2)-> (o1.getApodo()+o1.getIdContacto()).compareToIgnoreCase(o2.getApodo()+o2.getIdContacto()));
 		todos.addAll(dao.buscarTodos());
 		return todos;	
+	}
+
+	@Override
+	public Set<Contacto> buscarContactoPorNombre(String nombre) {
+		return dao.buscar(nombre);
+	}
+
+	@Override
+	public int importarCSV(String fichero) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

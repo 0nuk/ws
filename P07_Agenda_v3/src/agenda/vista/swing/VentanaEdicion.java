@@ -342,7 +342,7 @@ public class VentanaEdicion extends JFrame {
 
 		btnAgregarTelefono = new JButton("");
 		btnAgregarTelefono.setIcon(new ImageIcon(VentanaEdicion.class
-				.getResource("/images/icono.ok.png")));
+				.getResource("/images/trump1.png")));
 		btnAgregarTelefono.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnAgregarTelefono.setBounds(230, 33, 21, 25);
 		btnAgregarTelefono.setEnabled(false);
@@ -351,7 +351,7 @@ public class VentanaEdicion extends JFrame {
 
 		btnAgregarCorreo = new JButton("");
 		btnAgregarCorreo.setIcon(new ImageIcon(VentanaEdicion.class
-				.getResource("/images/icono.ok.png")));
+				.getResource("/images/trump1.png")));
 		btnAgregarCorreo.setBounds(746, 33, 21, 25);
 		btnAgregarCorreo.setEnabled(false);
 		btnAgregarCorreo.addActionListener(manejador);
@@ -359,7 +359,7 @@ public class VentanaEdicion extends JFrame {
 
 		btnBorrarTelefono = new JButton("");
 		btnBorrarTelefono.setIcon(new ImageIcon(VentanaEdicion.class
-				.getResource("/images/cancel-remove-icone-5993-96.png")));
+				.getResource("/images/trump2.png")));
 		btnBorrarTelefono.setBounds(263, 54, 21, 25);
 		btnBorrarTelefono.addActionListener(manejador);
 		panelTelCorreos.add(btnBorrarTelefono);
@@ -367,7 +367,7 @@ public class VentanaEdicion extends JFrame {
 
 		btnBorrarCorreo = new JButton("");
 		btnBorrarCorreo.setIcon(new ImageIcon(VentanaEdicion.class
-				.getResource("/images/cancel-remove-icone-5993-96.png")));
+				.getResource("/images/trump2.png")));
 		btnBorrarCorreo.setBounds(779, 54, 21, 25);
 		btnBorrarCorreo.addActionListener(manejador);
 		panelTelCorreos.add(btnBorrarCorreo);
@@ -583,7 +583,7 @@ public class VentanaEdicion extends JFrame {
 		// Compilar la expresion regular en un patron
         Pattern pattern = Pattern.compile(PATTERN_EMAIL);
  
-        // Realiza el macheo entre el patrón y el correo
+        // Realiza el macheo entre el patrï¿½n y el correo
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
 	}
@@ -638,7 +638,7 @@ public class VentanaEdicion extends JFrame {
 		public void actionPerformed(ActionEvent ev) {
 			if (ev.getSource() == btnCancelar) {
 				if (!edicion || JOptionPane.showConfirmDialog(null,
-										"Desea abandonar la ventana\n Se perderán los cambios realizados",
+										"Desea abandonar la ventana\n Se perderï¿½n los cambios realizados",
 										"Salir de Contactos", 2) == 0) {
 					salir();
 				}
@@ -663,7 +663,7 @@ public class VentanaEdicion extends JFrame {
 							if (JOptionPane
 									.showConfirmDialog(
 											null,
-											"El Contacto ha sido grabado con Exito\nDesea cargar más contactos",
+											"El Contacto ha sido grabado con Exito\nDesea cargar mï¿½s contactos",
 											"Salir de Contactos", 2) == 0) {
 								inicializaPantalla();
 							} else {
@@ -679,7 +679,7 @@ public class VentanaEdicion extends JFrame {
 						}
 					} else {
 						JOptionPane.showMessageDialog(null,
-								"Debe ingresar un Nombre y Apellido válidos");
+								"Debe ingresar un Nombre y Apellido vï¿½lidos");
 
 					}
 				}

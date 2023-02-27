@@ -7,11 +7,21 @@ public class E03 {
 	public static void main(String[] args)  {
 		try {
 			metodoProblematico();
-		}catch (IOException | SQLException e){
+		} catch (IOException | SQLException e){
 			
 		}
-//		}catch(SQLException e){
+//		try {
+//		
+//		} catch(SQLException e){
 //			
+//		} catch(IOException e){
+//	    
+//		}
+//		
+//		try {
+//		
+//		} catch(Exception e) {
+//	    
 //		}
 	}
 

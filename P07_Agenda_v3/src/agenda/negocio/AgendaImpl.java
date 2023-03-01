@@ -8,10 +8,10 @@ import java.util.TreeSet;
 
 import agenda.modelo.Contacto;
 import agenda.modelo.Domicilio;
-import agenda.persistencia.ContactoDaoMem;
+import agenda.persistencia.ContactoDaoSerial;
 
 public class AgendaImpl implements Agenda {
-	ContactoDaoMem dao = new ContactoDaoMem();
+	private ContactoDaoSerial dao = new ContactoDaoSerial();
 	
 	@Override
 	public void insertarContacto(Contacto c) {

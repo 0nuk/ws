@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import agenda.modelo.Contacto;
+import agenda.modelo.Domicilio;
 import agenda.persistencia.ContactoDaoMem;
 
 public class AgendaImpl implements Agenda {
@@ -51,16 +52,46 @@ public class AgendaImpl implements Agenda {
 
 	@Override
 	public int importarCSV(String fichero) throws IOException {
-		
+		int cont = 0;
 		try(BufferedReader br = new BufferedReader(new FileReader(fichero))) {
 			String linea;
 			while((linea = br.readLine()) != null ){
 				String[] leida = linea.split(";");
-				Muestra01.print(leida);
+				dao.insertar(creaContacto(leida));
+				cont++;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return cont;
+	}
+	
+	public Contacto creaContacto(String[] leida) {
+		Contacto c = new Contacto();
+		c.setNombre(leida[0]);
+		c.setApellidos(leida[1]);
+		c.setApodo(leida[2]);
+		c.addTelefonos(separador(leida[11]));
+		c.addCorreos(separador(leida[12]));
+		c.setDom(creaDomicilio(leida));
+		return c;
+	}
+	
+	public Domicilio creaDomicilio(String[] leida) {
+		Domicilio dom = new Domicilio();
+		dom.setTipoVia(leida[3]);
+		dom.setVia(leida[4]);
+		dom.setNumero(Integer.parseInt(leida[5]));
+		dom.setPiso(Integer.parseInt(leida[6]));
+		dom.setPuerta(leida[7]);
+		dom.setCodigoPostal(leida[8]);
+		dom.setCiudad(leida[9]);
+		dom.setProvincia(leida[10]);
+		return dom;
+	}
+	
+	public String[] separador(String leida) {
+		String[] separado = leida.split("/");
+		return separado;
 	}
 }

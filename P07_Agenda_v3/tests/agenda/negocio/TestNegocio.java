@@ -1,9 +1,6 @@
-package agenda.persistencia;
+package agenda.negocio;
 
 import java.io.IOException;
-
-import agenda.negocio.Agenda;
-import agenda.negocio.AgendaImpl;
 
 public class TestNegocio  {
 	public static void main(String[] args) throws IOException   {

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class LeeFichero {
 	public static void main(String[] args) {
-		String fichero = "/curso/ListaEnlazada.java";
+		String fichero = "/curso/ListaEnlazada.txt";
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(fichero));

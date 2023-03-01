@@ -1,6 +1,8 @@
 package agenda.negocio;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -48,9 +50,17 @@ public class AgendaImpl implements Agenda {
 	}
 
 	@Override
-	public int importarCSV(String fichero) throws FileNotFoundException {
-		// TODO Auto-generated method stub
+	public int importarCSV(String fichero) throws IOException {
+		
+		try(BufferedReader br = new BufferedReader(new FileReader(fichero))) {
+			String linea;
+			while((linea = br.readLine()) != null ){
+				String[] leida = linea.split(";");
+				Muestra01.print(leida);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return 0;
 	}
-
 }

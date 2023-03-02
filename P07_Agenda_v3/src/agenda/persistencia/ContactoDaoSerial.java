@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -47,26 +48,32 @@ public class ContactoDaoSerial implements ContactoDao {
 
 	@Override
 	public boolean eliminar(int idContacto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean eli =  almacen.mapa.remove(idContacto) != null;
+		grabarAlmacen();
+		return eli;
 	}
 
 	@Override
 	public void actualizar(Contacto contacto) {
-		// TODO Auto-generated method stub
-		
+		almacen.mapa.replace(contacto.getIdContacto(), contacto);
+		grabarAlmacen();
 	}
 
 	@Override
 	public Contacto buscar(int idContacto) {
-		// TODO Auto-generated method stub
-		return null;
+		return almacen.mapa.get(idContacto);
 	}
 
 	@Override
 	public Set<Contacto> buscar(String nom) {
-		// TODO Auto-generated method stub
-		return null;
+		nom = nom.toLowerCase();
+		Set<Contacto> encontrados = new HashSet<>();
+		for(Contacto c : almacen.mapa.values()) {
+			if(c.getApellidos().toLowerCase().contains(nom) || c.getApodo().toLowerCase().contains(nom) || c.getNombre().toLowerCase().contains(nom)) {
+				encontrados.add(c);
+			}
+		}
+		return encontrados;
 	}
 
 	@Override

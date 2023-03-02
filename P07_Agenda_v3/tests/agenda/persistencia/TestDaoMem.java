@@ -14,7 +14,7 @@ import agenda.modelo.Contacto;
 class TestDaoMem {
 	
 	private static Contacto[] contactos;
-	private ContactoDao dao = new ContactoDaoMem();;
+	private ContactoDao dao = new ContactoDaoSerial();;
 
 	@BeforeEach
 	void carga() {

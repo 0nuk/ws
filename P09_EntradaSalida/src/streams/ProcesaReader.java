@@ -17,8 +17,7 @@ public class ProcesaReader {
 		URL direccion = new URL("https://www.elmundo.es/index.html");
 		visualiza(direccion.openStream());
 	}
-	
-	
+		
 	public static void visualiza(Reader r) throws RuntimeException {
 		try (BufferedReader br = new BufferedReader(r)){
 			String linea;

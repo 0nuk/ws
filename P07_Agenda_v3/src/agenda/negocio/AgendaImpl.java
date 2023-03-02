@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
 
+import agenda.config.Config;
 import agenda.modelo.Contacto;
 import agenda.modelo.Domicilio;
-import agenda.persistencia.ContactoDaoSerial;
+import agenda.persistencia.ContactoDao;
 
 public class AgendaImpl implements Agenda {
-	private ContactoDaoSerial dao = new ContactoDaoSerial();
+	private ContactoDao dao = Config.getContactoDao();
 	
 	@Override
 	public void insertarContacto(Contacto c) {

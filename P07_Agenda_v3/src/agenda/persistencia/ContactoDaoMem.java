@@ -20,14 +20,7 @@ public class ContactoDaoMem implements ContactoDao {
 
 	@Override
 	public boolean eliminar(int idContacto) {
-		Contacto c = new Contacto();
-		c = almacen.remove(idContacto);
-		if(c==null) {
-			return false;
-		} else {
-			return true;
-		}
-			
+		return almacen.remove(idContacto) != null;		
 	}
 
 	@Override

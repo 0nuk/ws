@@ -15,7 +15,7 @@ public class Config {
 	
 	public static ContactoDao getContactoDao() {
 		if (cDao == null) {
-			String tipoDao = getProp().getProperty("daos");
+			String tipoDao = getProperty("daos");
 			switch (tipoDao) {
 			case "mem":
 				cDao = new ContactoDaoMem();
@@ -27,13 +27,11 @@ public class Config {
 				cDao = new ContactoDaoSerial();
 				break;			
 			}
-			
-			cDao = new ContactoDaoSerial();
 		}
 		return cDao;
 	}
 	
-	public static Properties getProp() {
+	private static Properties getProp() {
 		if(prop == null) {
 			prop = new Properties();
 			try {
@@ -44,5 +42,11 @@ public class Config {
 			}
 		}
 		return prop;
+	}
+	
+	public static String getProperty(String clave) {
+		String valor = getProp().getProperty(clave);
+		if(valor == null) valor = "";
+		return valor;
 	}
 }

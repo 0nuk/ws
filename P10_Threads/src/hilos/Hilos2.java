@@ -17,7 +17,7 @@ public class Hilos2 implements Runnable{
 		
 	}
 	public static void main(String[] args) {
-		Hilos2 h1 = new Hilos2("|_|____________________________|__________________________|");
+		Hilos2 h1 = new Hilos2("|_|____________________________|___________________________|");
 		Thread t1 = new Thread(h1);		
 		t1.start();
 		Hilos2 h2 = new Hilos2("|____|____________________________|________________________|");

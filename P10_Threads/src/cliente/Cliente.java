@@ -11,7 +11,6 @@ public class Cliente {
 	private Socket socket;
 	
 	public Cliente(String host, int port) {
-//		super();
 		try {
 			socket = new Socket(host, port);
 			new ClienteIn(socket);
@@ -25,8 +24,11 @@ public class Cliente {
 		this(host, 23);
 	}
 	
+	public static void main(String[] args) {
+		new Cliente("10.2.1.10");
+	}
+	
 	private class ClienteIn extends Thread {
-		@SuppressWarnings("unused")
 		private Socket socket;
 		private BufferedReader in;
 		
@@ -46,6 +48,9 @@ public class Cliente {
 				while((linea = in.readLine()) != null) {
 					System.out.println(linea);
 				}
+				System.out.println("Conexion Finalizada!!!");
+				socket.close();
+				System.exit(0);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -53,14 +58,11 @@ public class Cliente {
 		
 		}
 	public class ClienteOut extends Thread {
-		@SuppressWarnings("unused")
-		private Socket socket;
 		private PrintWriter out;
 		
 		public ClienteOut(Socket socket) {
-			this.socket = socket;
 			try {
-				out = new PrintWriter(socket.getOutputStream());
+				out = new PrintWriter(socket.getOutputStream(), true);
 				start();
 			} catch (IOException e) {
 				e.printStackTrace();

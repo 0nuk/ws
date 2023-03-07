@@ -110,6 +110,7 @@ public class ServerChatV2 {
 							cant--;
 							difusion("SRV: " + nick + " se ha desconectado");
 							log(nick + " se ha desconectado");
+							socket.close();
 							break;
 						case "who":
 						case "quien":

@@ -7,22 +7,22 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerChat {
+public class ServerChatV1 {
 	
 	private int puerto = 23;
 	
-	public ServerChat() {
+	public ServerChatV1() {
 		iniciar();
 		
 	}
 	
-	public ServerChat(int puerto) {
+	public ServerChatV1(int puerto) {
 		this.puerto = puerto;
 		iniciar();
 	}
 	
 	public static void main(String[] args) {
-		new ServerChat();
+		new ServerChatV1();
 	}
 	
 	private void iniciar() {

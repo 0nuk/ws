@@ -10,15 +10,16 @@ public class Domicilio implements Serializable{
 	private int numero;
 	private int piso;
 	private String puerta;
+	private String codigoPostal;
+	private String ciudad;
+	private String provincia;
+	
 	public String getPuerta() {
 		return puerta;
 	}
 	public void setPuerta(String puerta) {
 		this.puerta = puerta;
 	}
-	private String codigoPostal;
-	private String ciudad;
-	private String provincia;
 	public String getTipoVia() {
 		return tipoVia;
 	}

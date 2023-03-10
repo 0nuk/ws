@@ -74,10 +74,7 @@ public class ContactoDaoSQL implements ContactoDao{
 			} else {
 				con.rollback();
 				throw new PersistenciaException();
-			}
-			
-						
-		
+			}	
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new PersistenciaException();
